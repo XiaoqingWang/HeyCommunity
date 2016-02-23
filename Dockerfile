@@ -38,9 +38,7 @@ RUN apt-get install git
 
 RUN echo ‘################’
 WORKDIR /
-RUN pwd && ls -la
-
-WORKDIR /backend
+COPY . /
 RUN pwd && ls -la
 
 RUN git submodule init \
