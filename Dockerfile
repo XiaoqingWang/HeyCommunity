@@ -31,15 +31,19 @@ RUN apt-get update \
 # 配置默认放置 App 的目录
 RUN a2enmod rewrite \
     && service apache2 restart \
+    && mkdir -p /app \
+    && rm -fr /var/www/html \
+    && ln -s /app /var/www/html
 
 
-## 安装 Git
+## 安装 Git tree
 RUN apt-get install git
+RUN apt-get install tree
 
-RUN echo ‘################’
-WORKDIR /
-COPY . /
+WORKDIR /app
+COPY . /app
 RUN pwd && ls -la
+RUN tree
 
 RUN git submodule init \
     && git submodule update \
