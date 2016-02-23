@@ -37,6 +37,7 @@ RUN a2enmod rewrite \
 RUN apt-get install git
 
 RUN echo ‘################’
+RUN pwd && cd / && pwd
 RUN ls -la
 
 RUN && git submodule init \
