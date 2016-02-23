@@ -37,6 +37,7 @@ RUN a2enmod rewrite \
 RUN apt-get install git
 
 RUN echo ‘################’
+WORKDIR /
 RUN pwd && cd / && pwd
 RUN ls -la
 
