@@ -30,3 +30,11 @@ RUN apt-get update \
 # 开启 URL 重写模块
 # 配置默认放置 App 的目录
 RUN a2enmod rewrite \
+    && service apache2 restart \
+
+
+## 安装 Git
+RUN apt-get install git \
+    && git init \
+    && git update \
+
