@@ -38,12 +38,14 @@ RUN a2enmod rewrite \
 
 ## 安装 Git tree
 RUN apt-get install git
-RUN apt-get install tree
+# RUN apt-get install tree
 
 WORKDIR /app
 COPY . /app
 RUN pwd && ls -la
-RUN tree
+RUN pwd && ls -la backend
+RUN pwd && ls -la frontend
+# RUN tree
 
 RUN git submodule init \
     && git submodule update \
