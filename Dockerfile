@@ -36,17 +36,11 @@ RUN a2enmod rewrite \
     && ln -s /app /var/www/html
 
 
-## 安装 Git tree
-RUN apt-get install git
-# RUN apt-get install tree
-
+# 复制程序代码
 WORKDIR /app
 COPY . /app
 RUN pwd && ls -la
 RUN pwd && ls -la backend
 RUN pwd && ls -la frontend
-# RUN tree
 
-RUN git submodule init \
-    && git submodule update \
 
