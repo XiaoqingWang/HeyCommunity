@@ -35,6 +35,6 @@ RUN a2enmod rewrite \
 
 ## 安装 Git
 RUN apt-get install git \
-    && git init \
-    && git update \
+    && git submodule init \
+    && git submodule update \
 
