@@ -48,7 +48,7 @@ RUN composer install \
     && chown -R www-data:www-data /app \
     && chmod -R 0777 /app/backend/
 
-RUN cp .env.example .env \
+RUN cp ../.env_daoCloud .env \
     && php artisan key:generate
 
 RUN php artisan migrate:refresh --seed
