@@ -26,7 +26,7 @@ RUN apt-get update \
 
 
 # PHP display_errors
-RUN sed -ri 's/^display_errors\s*=\s*Off/display_errors = On/g' /etc/php5/apache2/php.ini
+# RUN sed -ri 's/^display_errors\s*=\s*Off/display_errors = On/g' /etc/php5/apache2/php.ini
 
 
 # 安装 Composer，此物是 PHP 用来管理依赖关系的工具
