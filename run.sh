@@ -4,6 +4,12 @@ echo '################'
 pwd
 ls -la
 
+git submodule update --init
+
+cd backend
+pwd
+ls -la
+
 composer install
 chmod -R 0777 .
 

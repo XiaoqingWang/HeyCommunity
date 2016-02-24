@@ -44,7 +44,5 @@ WORKDIR /app
 COPY . /app
 
 
-# backend 配置
-WORKDIR /app/backend
-
-CMD ["sh ../run.sh"]
+# run
+RUN sh run.sh
