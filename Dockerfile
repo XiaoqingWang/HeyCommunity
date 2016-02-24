@@ -1,6 +1,8 @@
 ## 参考 https://github.com/DaoCloud/php-laravel-mysql-sample/blob/master/Dockerfile
 FROM daocloud.io/php:5.6-apache
 
+RUN echo $MYSQL_PORT_3306_TCP_ADDR $MYSQL_PASSWORD $MYSQL_INSTANCE_NAME
+
 # APT 自动安装 PHP 相关的依赖包,如需其他依赖包在此添加
 RUN apt-get update \
     && apt-get install -y \
@@ -51,4 +53,4 @@ RUN composer install \
 RUN cp ../.env_daoCloud .env \
     && php artisan key:generate
 
-RUN php artisan migrate:refresh --seed
+#RUN php artisan migrate:refresh --seed
