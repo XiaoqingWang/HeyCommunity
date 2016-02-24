@@ -56,5 +56,4 @@ RUN cp ../.env_daoCloud .env \
 
 
 # RUN php artisan migrate:refresh --seed
-CMD php artisan migrate:refresh --seed
-
+CMD ["php" "artisan" "migrate:refresh" "--seed"]
