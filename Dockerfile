@@ -40,7 +40,15 @@ RUN a2enmod rewrite \
 WORKDIR /app
 COPY . /app
 
+
 # backend 配置
 WORKDIR /app/backend
 RUN pwd && ls -la
-RUN composer install
+RUN /usr/local/bin/composer install \
+    && chown -R www-data:www-data /app \
+    && chmod -R 0777 /app/backend/
+
+RUN cp .env.example .env \
+    && php artisan key:generate
+
+RUN php artisan migrate:refresh --seed
