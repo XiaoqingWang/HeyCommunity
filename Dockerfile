@@ -54,4 +54,7 @@ RUN composer install \
 RUN cp ../.env_daoCloud .env \
     && php artisan key:generate
 
-#RUN php artisan migrate:refresh --seed
+
+# RUN php artisan migrate:refresh --seed
+CMD php artisan migrate:refresh --seed
+
