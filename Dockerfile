@@ -19,7 +19,7 @@ RUN apt-get update \
     # 用完包管理器后安排打扫卫生可以显著的减少镜像大小
     && apt-get clean \
     && apt-get autoclean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
 # 安装 Composer，此物是 PHP 用来管理依赖关系的工具
@@ -44,7 +44,7 @@ COPY . /app
 # backend 配置
 WORKDIR /app/backend
 RUN pwd && ls -la
-RUN /usr/local/bin/composer install \
+RUN composer install \
     && chown -R www-data:www-data /app \
     && chmod -R 0777 /app/backend/
 
