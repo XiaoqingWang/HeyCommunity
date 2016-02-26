@@ -15,4 +15,10 @@ chmod -R 0777 .
 
 cp ../.env.daoCloud .env
 php artisan key:generate
-php artisan migrate:refresh --seed
+
+if [ -n "$MYSQL_PORT_3306_TCP" ]; then
+    echo 'run migrate'
+    php artisan migrate:refresh --seed
+else
+    echo 'not run migrate'
+fi
