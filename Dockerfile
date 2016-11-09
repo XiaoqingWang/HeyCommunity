@@ -79,4 +79,3 @@ RUN chown -R :www-data . \
 ##
 ##
 EXPOSE 80
-CMD ["sh", "/app/run.sh"]
