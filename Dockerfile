@@ -78,5 +78,5 @@ RUN chown -R :www-data . \
 
 ##
 ##
-WORKDIR /app
-RUN sh /app/run.sh
+EXPOSE 80
+CMD ["sh", "/app/run.sh"]
