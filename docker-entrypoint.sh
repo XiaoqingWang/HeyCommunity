@@ -3,6 +3,7 @@
 
 ##
 ##
+env
 echo -e "\n\n\n\n ### Deploy"
 
 if [ -n "$MYSQL_PORT_3306_TCP_PORT" ]; then
