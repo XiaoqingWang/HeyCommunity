@@ -81,4 +81,4 @@ ENV HC_VERSION 2.0.0-beta.1
 EXPOSE 80
 VOLUME /app/backend/public/uploads
 RUN env
-RUN ["/app/docker-entrypoint.sh"]
+CMD ["/bin/bash", "/app/docker-entrypoint.sh"]
