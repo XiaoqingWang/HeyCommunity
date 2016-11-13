@@ -28,12 +28,11 @@ if [ -n "$MYSQL_PORT_3306_TCP_PORT" ]; then
     "
   fi
 
-  echo -e $dbVal >> ~/.bashrc
-  source ~/.bashrc
-
-  php /app/backend/artisan migrate:refresh --seed
-
-  echo 'With the database and perform the migration'
+  echo -e $dbVal >> ~/.bashrc \
+  && source ~/.bashrc \
+  && php /app/backend/artisan migrate:refresh --seed \
+  && echo 'With the database and perform the migration' \
+  || echo 'An error occurred'
 else
   echo 'There is no database'
 fi
