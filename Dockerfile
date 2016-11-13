@@ -74,4 +74,5 @@ RUN chown -R :www-data . \
 ##
 ##
 EXPOSE 80
+VOLUME /app/backend/public/uploads
 CMD ["/bin/bash", "/app/run.sh"]
