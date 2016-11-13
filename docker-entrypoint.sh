@@ -21,9 +21,9 @@ if [ -n "$MYSQL_PORT_3306_TCP_PORT" ]; then
     "
   else
     dbVal=$dbVal"
-      export DB_DATABASE=$MYSQL_DATABASE\n
+      export DB_DATABASE=$MYSQL_ENV_MYSQL_DATABASE\n
       export DB_USERNAME=root\n
-      export DB_PASSWORD=$MYSQL_ROOT_PASSWORD\n
+      export DB_PASSWORD=$MYSQL_ENV_MYSQL_ROOT_PASSWORD\n
     "
   fi
 
