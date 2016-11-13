@@ -1,6 +1,6 @@
 ## 参考 https://github.com/DaoCloud/php-laravel-mysql-sample/blob/master/Dockerfile
-FROM daocloud.io/php:5.6-apache
-
+FROM php:5.6-apache
+MAINTAINER Rod <rod@protobia.tech>
 
 ##
 ## APT 自动安装 PHP 相关的依赖包,如需其他依赖包在此添加
@@ -72,7 +72,14 @@ RUN chown -R :www-data . \
 
 
 ##
+## 设置环境变量
+ENV HC_VERSION 2.0.0-beta.1
+
+
+##
 ##
 EXPOSE 80
 VOLUME /app/backend/public/uploads
-CMD ["/bin/bash", "/app/run.sh"]
+# CMD ["/bin/bash", "/app/run.sh"]
+RUN env
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
