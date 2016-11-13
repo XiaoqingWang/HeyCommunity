@@ -9,3 +9,7 @@ if [ -n "$MYSQL_PORT_3306_TCP" ]; then
 else
     echo 'not run migrate'
 fi
+
+
+## apache2 foreground
+apache2-foreground
