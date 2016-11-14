@@ -20,13 +20,13 @@ if [ -n "$MYSQL_PORT_3306_TCP_PORT" ]; then
     export DB_PASSWORD=$MYSQL_ENV_MYSQL_ROOT_PASSWORD
   fi
 
-  echo -e "\n\n" >> /etc/profile
-  echo "export DB_HOST=$DB_HOST" >> /etc/profile
-  echo "export DB_PORT=$DB_PORT" >> /etc/profile
-  echo "export DB_DATABASE=$DB_DATABASE" >> /etc/profile
-  echo "export DB_USERNAME=$DB_USERNAME" >> /etc/profile
-  echo "export DB_PASSWORD=$DB_PASSWORD" >> /etc/profile
-  source /etc/profile
+  echo -e "\n\n" >> /root/.bashrc
+  echo "export DB_HOST=$DB_HOST" >> /root/.bashrc
+  echo "export DB_PORT=$DB_PORT" >> /root/.bashrc
+  echo "export DB_DATABASE=$DB_DATABASE" >> /root/.bashrc
+  echo "export DB_USERNAME=$DB_USERNAME" >> /root/.bashrc
+  echo "export DB_PASSWORD=$DB_PASSWORD" >> /root/.bashrc
+  source /root/.bashrc
 
   php artisan migrate:refresh --seed \
   && echo 'With the database and perform the migration' \
