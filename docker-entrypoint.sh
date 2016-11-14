@@ -28,9 +28,10 @@ if [ -n "$MYSQL_PORT_3306_TCP_PORT" ]; then
   echo "export DB_PASSWORD=$DB_PASSWORD" >> /root/.bashrc
   source /root/.bashrc
 
-  php artisan migrate:refresh --seed \
-  && echo 'With the database and perform the migration' \
-  || echo 'An error occurred'
+  until php artisan migrate:refresh --seed; do
+    echo 'database migration retry ...'
+  done
+  echo 'With the database and perform the migration'
 else
   echo 'There is no database'
 fi

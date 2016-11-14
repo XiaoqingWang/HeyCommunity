@@ -27,6 +27,11 @@ RUN apt-get clean \
 
 
 ##
+## 设置环境变量
+ENV HC_VERSION 2.0.0-beta.1
+
+
+##
 ## 安装 Composer，此物是 PHP 用来管理依赖关系的工具
 RUN curl -sS https://getcomposer.org/installer \
     | php -- --install-dir=/usr/local/bin --filename=composer
@@ -69,11 +74,6 @@ RUN cp .env.example .env \
     && php artisan key:g
 RUN chown -R :www-data . \
     && chmod -R g+w storage bootstrap/cache public
-
-
-##
-## 设置环境变量
-ENV HC_VERSION 2.0.0-beta.1
 
 
 ##
