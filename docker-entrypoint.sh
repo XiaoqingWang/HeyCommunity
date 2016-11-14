@@ -3,7 +3,9 @@
 
 ##
 ##
-echo -e "\n\n\n\n### Deploy"
+echo -e "\n\n\n\n"
+echo "###################################"
+echo "## Deploy"
 
 if [ -n "$MYSQL_PORT_3306_TCP_PORT" ]; then
 
@@ -30,6 +32,7 @@ if [ -n "$MYSQL_PORT_3306_TCP_PORT" ]; then
 
   until php artisan migrate:refresh --seed; do
     echo 'database migration retry ...'
+    sleep 1.88;
   done
   echo 'With the database and perform the migration'
 else
@@ -39,8 +42,11 @@ fi
 
 ##
 ##
-echo -e "\n\n\n\n### Debug"
+echo -e "\n\n\n\n"
+echo "###################################"
+echo "## Debug"
 env
+echo -e "\n\n\n\n"
 
 
 ##
