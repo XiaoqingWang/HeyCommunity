@@ -81,4 +81,4 @@ RUN chown -R :www-data . \
 EXPOSE 80
 VOLUME /app/backend/public/uploads
 RUN env
-CMD ["/bin/bash", "/app/docker-entrypoint.sh"]
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
