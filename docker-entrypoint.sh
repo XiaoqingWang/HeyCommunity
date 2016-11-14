@@ -47,3 +47,7 @@ echo "###################################"
 echo "## Debug"
 env
 echo -e "\n\n\n\n"
+
+
+#apache2-foreground
+exec "$@"
