@@ -49,5 +49,6 @@ env
 echo -e "\n\n\n\n"
 
 
-# apache2-foreground
-apache2-foreground
+##
+##
+exec "$@"

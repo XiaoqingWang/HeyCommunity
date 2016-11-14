@@ -13,7 +13,7 @@ db:
     - MYSQL_DATABASE=prod_heycommunity
     - MYSQL_ROOT_PASSWORD=Root
   volumes:
-    - /data/HeyCommunityAppDb:/var/lib/mysql
+    - /data/HeyCommunityDBStorage:/var/lib/mysql
   ports:
     - "3306"
   restart: always
