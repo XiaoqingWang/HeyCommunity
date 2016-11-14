@@ -82,4 +82,3 @@ EXPOSE 80
 VOLUME /app/backend/public/uploads
 RUN env
 ENTRYPOINT ["/bin/bash", "/app/docker-entrypoint.sh"]
-CMD ["apache2-foreground"]
