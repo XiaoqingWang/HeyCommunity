@@ -1,0 +1,19 @@
+app:
+  image: daocloud.io/supperod/heycommunity-app
+  links:
+    - db:MYSQL
+  volumes:
+    - /data/HeyCommunityAppStorage:/app/backend/public/uploads
+  ports:
+    - "80"
+  restart: always
+db:
+  image: mysql:5.6
+  environment:
+    - MYSQL_DATABASE=prod_heycommunity
+    - MYSQL_ROOT_PASSWORD=Root
+  volumes:
+    - /data/HeyCommunityAppDb:/var/lib/mysql
+  ports:
+    - "3306"
+  restart: always
