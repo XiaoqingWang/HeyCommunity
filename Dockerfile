@@ -85,6 +85,7 @@ RUN chown -R :www-data . \
 ##
 ## 部署 frontend
 WORKDIR /app/frontend
+RUN npm install
 RUN npm run build
 
 
