@@ -73,6 +73,13 @@ COPY . /app
 
 
 ##
+## 部署 frontend
+WORKDIR /app/frontend
+RUN npm install
+RUN npm run build
+
+
+##
 ## 部署 backend
 WORKDIR /app/backend
 RUN composer install
@@ -80,13 +87,6 @@ RUN cp .env.example .env \
     && php artisan key:g
 RUN chown -R :www-data . \
     && chmod -R g+w storage bootstrap/cache public
-
-
-##
-## 部署 frontend
-WORKDIR /app/frontend
-RUN npm install
-RUN npm run build
 
 
 ##
