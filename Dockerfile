@@ -18,6 +18,11 @@ RUN apt-get update \
         pdo_mysql \
         zip
 
+##
+## 安装 node npm 等
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash \
+&& apt-get install -y nodejs
+
 
 ##
 ## 用完包管理器后安排打扫卫生可以显著的减少镜像大小
@@ -74,6 +79,12 @@ RUN cp .env.example .env \
     && php artisan key:g
 RUN chown -R :www-data . \
     && chmod -R g+w storage bootstrap/cache public
+
+
+##
+## 部署 frontend
+WORKDIR /app/frontend
+RUN npm run build
 
 
 ##
